@@ -1,0 +1,49 @@
+{
+  "realm": "builders",
+  "enabled": true,
+  "registrationAllowed": true,
+  "loginWithEmailAllowed": true,
+  "resetPasswordAllowed": true,
+  "verifyEmail": true,
+  "smtpServer": {
+    "host": "mailpit",
+    "port": "1025",
+    "from": "no-reply@builders.local",
+    "auth": false,
+    "ssl": false,
+    "starttls": false
+  },
+  "clients": [
+    {
+      "clientId": "web",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": true,
+      "standardFlowEnabled": true,
+      "directAccessGrantsEnabled": false,
+      "redirectUris": [
+        "http://localhost:3000/api/auth/callback/keycloak"
+      ],
+      "webOrigins": [
+        "http://localhost:3000"
+      ]
+    },
+    {
+      "clientId": "api",
+      "enabled": true,
+      "protocol": "openid-connect",
+      "publicClient": false,
+      "standardFlowEnabled": false,
+      "directAccessGrantsEnabled": false,
+      "serviceAccountsEnabled": false,
+      "secret": "local-api-secret-change-me",
+      "attributes": {
+        "access.token.lifespan": "300"
+      }
+    }
+  ],
+  "realmRoles": [
+    { "name": "user" },
+    { "name": "platform_admin" }
+  ]
+}

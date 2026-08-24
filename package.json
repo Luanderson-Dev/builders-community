@@ -1,0 +1,12 @@
+{
+  "name": "builders-community",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "commitlint": "commitlint --from HEAD~1"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^20",
+    "@commitlint/config-conventional": "^20"
+  }
+}

@@ -1,0 +1,16 @@
+name: commitlint
+
+on:
+  pull_request:
+    types: [opened, edited, reopened, synchronize]
+
+jobs:
+  title:
+    name: PR title segue Conventional Commits
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: wagoid/commitlint-github-action@v6
+        with:
+          helpURL: https://github.com/Luanderson-Dev/builders-community/blob/main/CONTRIBUTING.md
