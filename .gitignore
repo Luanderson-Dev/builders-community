@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Builds
+backend/build/
+frontend/.next/
+frontend/out/
+dist/
+
+# Env & secrets
+.env
+.env.*
+!.env.example
+
+# IDE
+.idea/
+.vscode/
+*.iml
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs & temp
+*.log
+tmp/
+
+# Docker volumes (local dev)
+deploy/data/
