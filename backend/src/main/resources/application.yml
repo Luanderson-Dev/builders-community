@@ -24,3 +24,5 @@ management:
 
 server:
   port: ${PORT:8080}
+
+# Porta e credenciais padrão para o ambiente local (docker-compose.local.yml).
