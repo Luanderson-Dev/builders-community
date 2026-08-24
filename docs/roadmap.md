@@ -12,7 +12,7 @@ Regras do roadmap:
 
 Meta: esqueleto monorepo rodando local com CI.
 
-- [x] `git init`, GitHub repo público ([togetherdev-space](https://github.com/Luanderson-Dev/builders-community)), proteção da `main`
+- [x] `git init`, GitHub repo público ([togetherdev-space](https://github.com/Luanderson-Dev/togetherdev-space)), proteção da `main`
 - [x] Licença MIT + guia de contribuição
 - [ ] Estrutura monorepo (ADR 0006): `backend/`, `frontend/`, `docs/`, `deploy/`
 - [x] Backend: Spring Boot 4.x + Java 25 via start.spring.io (Maven), Actuator, Flyway, JPA, Spotless
@@ -22,7 +22,7 @@ Meta: esqueleto monorepo rodando local com CI.
 - [x] Formatação: Spotless (Java), Prettier+ESLint (TS); Conventional Commits verificado no CI
 - [x] Visão consolidada no `README.md` raiz; README apontando pra docs
 
-**Done quando:** CI verde em PR de exemplo tocando backend e frontend; compose sobe tudo local. ✅ [PR #1](https://github.com/Luanderson-Dev/builders-community/pull/1)
+**Done quando:** CI verde em PR de exemplo tocando backend e frontend; compose sobe tudo local. ✅ [PR #1](https://github.com/Luanderson-Dev/togetherdev-space/pull/1)
 
 ## Fase 1 — Infra base no ar (Semana 2)
 
