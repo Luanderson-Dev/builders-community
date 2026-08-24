@@ -176,6 +176,7 @@ togetherdev-space/
 | [`docs/architecture/api-conventions.md`](docs/architecture/api-conventions.md) | Contrato REST |
 | [`docs/architecture/security.md`](docs/architecture/security.md) | OIDC/BFF, papéis, LGPD |
 | [`docs/architecture/environments.md`](docs/architecture/environments.md) | Ambientes, variáveis, backups, runbook |
+| [`docs/architecture/provisioning-vps.md`](docs/architecture/provisioning-vps.md) | Provisionamento VPS + Coolify |
 | [`docs/adr/`](docs/adr/) | ADRs 0001–0009 |
 | [`docs/roadmap.md`](docs/roadmap.md) | Fases 0–6 semanais |
 | [`CONTRIBUTING.md`](CONTRIBUTING.md) | Commits, DoD, release |

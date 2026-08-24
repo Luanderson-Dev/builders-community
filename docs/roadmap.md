@@ -28,6 +28,8 @@ Meta: esqueleto monorepo rodando local com CI.
 
 Meta: hello-world de API e frontend acessíveis por HTTPS na VPS.
 
+> Execução passo a passo em [`docs/architecture/provisioning-vps.md`](architecture/provisioning-vps.md). Dockerfiles já prontos e validados localmente (`backend/Dockerfile`, `frontend/Dockerfile`).
+
 - [ ] Provisionar VPS (4 GB), hardening SSH/firewall/fail2ban ([environments.md](architecture/environments.md))
 - [ ] Instalar Coolify; Traefik + Let's Encrypt funcionando
 - [ ] Subir postgres, redis, minio, keycloak como apps Coolify

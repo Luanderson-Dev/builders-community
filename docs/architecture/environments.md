@@ -57,6 +57,8 @@ AUTH_SECRET                  # segredo de assinatura da sessão Auth.js
 
 ## Produção (VPS + Coolify)
 
+> Provisionamento completo (hardening, DNS, apps, backups): [`provisioning-vps.md`](provisioning-vps.md)
+
 Layout de recursos (VPS 4 GB mínimo):
 
 | Container | RAM aprox. |
