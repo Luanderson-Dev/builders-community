@@ -90,6 +90,18 @@ O import usa `deploy/keycloak/realm-togetherdev.json` (montar como arquivo em `/
 
 Ajustes pós-boot via UI admin (`auth.dominio.com`): política de senha, brute-force protection on (Realm Settings → Security Defenses).
 
+### 5.1. Lições da execução real (API do Coolify 4.3.10)
+
+Provisionamento executado via API REST em 2026-08-24 — pegadinhas confirmadas:
+
+- **Contexto de build é a raiz do repo**, mesmo com `dockerfile_location=backend/Dockerfile`. Os Dockerfiles usam caminhos prefixados (`COPY backend/...`, `COPY frontend/...`) e há um `.dockerignore` único na raiz. Local: `docker build -f backend/Dockerfile .` a partir da raiz.
+- **Keycloak 26 em `start` exige `KC_HOSTNAME`** — sem ele o container entra em crash-loop silencioso (a API não expõe logs de container parado). Definir também `KC_HTTP_ENABLED=true` + `KC_PROXY_HEADERS=xforwarded` atrás do Traefik.
+- Import de realm via arquivo montado (`type=file` no endpoint `/applications/{uuid}/storages`), montado em `/opt/keycloak/data/import/realm-togetherdev.json`; o container precisa rodar com `CMD ["start", "--import-realm"]`.
+- Volume persistente no MinIO: storages aceitam `{"type":"persistent","name":"minio-data","mount_path":"/data"}` (não existe tipo `volume`).
+- Imagens prontas (minio/keycloak) como apps "Dockerfile raw": o `dockerfile` só pode ser definido **na criação** (`POST /applications/dockerfile`); depois, PATCH não permite alterá-lo — recriar o recurso se precisar mudar.
+- Postgres/Redis: hostname interno na rede Coolify = UUID do recurso (ex.: `rzlv...:5432`).
+- Ordem importa: subir bancos primeiro, esperar `running:healthy`, depois apps que dependem deles.
+
 ## 6. Deploy da API
 
 Coolify → Project → **New Resource → GitHub App/Public repo** → `Luanderson-Dev/togetherdev-space`:
