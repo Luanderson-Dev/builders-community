@@ -1,0 +1,61 @@
+name: 🐞 Reportar bug
+description: Algo não funciona como esperado
+labels: ["bug", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: Obrigado por reportar! Preencha os campos abaixo para agilizar o diagnóstico.
+
+  - type: textarea
+    id: descricao
+    attributes:
+      label: Descrição do bug
+      description: Explique clara e objetivamente o que aconteceu.
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproducao
+    attributes:
+      label: Passos para reproduzir
+      placeholder: |
+        1. Vá para '...'
+        2. Clique em '...'
+        3. Veja o erro
+    validations:
+      required: true
+
+  - type: textarea
+    id: esperado
+    attributes:
+      label: Comportamento esperado
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área afetada
+      options:
+        - Frontend (web)
+        - Backend (api)
+        - Infraestrutura / deploy
+        - Documentação
+        - Não sei dizer
+    validations:
+      required: true
+
+  - type: textarea
+    id: ambiente
+    attributes:
+      label: Ambiente
+      description: SO, navegador, versão, como está rodando (local/Docker)...
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs relevantes
+      description: Cole logs/screenshots. Remova dados sensíveis.
+      render: shell

@@ -13,4 +13,4 @@ jobs:
 
       - uses: wagoid/commitlint-github-action@v6
         with:
-          helpURL: https://github.com/Luanderson-Dev/builders-community/blob/main/CONTRIBUTING.md
+          helpURL: https://github.com/Luanderson-Dev/togetherdev-space/blob/main/CONTRIBUTING.md

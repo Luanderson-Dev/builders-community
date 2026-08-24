@@ -17,7 +17,7 @@ O MVP v1 cobre o ciclo até "publicar progresso" (ver [ADR 0009](../adr/0009-esc
 ```
                     ┌──────────────────────────────┐
    Builder ───────▶ │                              │
- (browser/mobile)   │   Builders Community         │
+ (browser/mobile)   │   TogetherDev Space          │
                     │                              │
  Visitante ───────▶ │  rede social + hub projetos  │
                     │                              │

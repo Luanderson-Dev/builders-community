@@ -20,7 +20,7 @@ localhost:9000  MinIO S3        localhost:9001  MinIO console
 localhost:8081  Keycloak        localhost:8025  Mailpit UI
 ```
 
-Seed: realm Keycloak exportado em `deploy/keycloak/realm-builders.json` (importado no boot); usuário admin local; migração Flyway roda automática.
+Seed: realm Keycloak exportado em `deploy/keycloak/realm-togetherdev.json` (importado no boot); usuário admin local; migração Flyway roda automática.
 
 Comandos:
 
@@ -38,7 +38,7 @@ Nomes canônicos (valores nunca versionados — Coolify env vars ou `.env.local`
 ```
 SPRING_DATASOURCE_URL / _USERNAME / _PASSWORD
 REDIS_URL
-KEYCLOAK_ISSUER_URI          # https://auth.dominio.com/realms/builders
+KEYCLOAK_ISSUER_URI          # https://auth.dominio.com/realms/togetherdev
 KEYCLOAK_JWKS_URI
 KEYCLOAK_AUDIENCE            # api
 MINIO_ENDPOINT / _ACCESS_KEY / _SECRET_KEY / _BUCKET_PUBLIC

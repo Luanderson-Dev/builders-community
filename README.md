@@ -1,4 +1,4 @@
-# 🚀 Builders Community
+# 🚀 TogetherDev Space
 
 ![Java](https://img.shields.io/badge/Java_25-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white)
 ![Spring Boot](https://img.shields.io/badge/Spring_Boot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white)
@@ -15,7 +15,7 @@
 
 ## 📌 Visão Geral
 
-O **Builders Community** conecta pessoas que constroem coisas.
+O **TogetherDev Space** conecta pessoas que constroem coisas.
 
 A plataforma combina quatro dimensões em um produto só:
 
@@ -146,7 +146,7 @@ pnpm dev                 # http://localhost:3000
 ## 📁 Estrutura do Projeto
 
 ```
-builders-community/
+togetherdev-space/
 ├── backend/                    # API Java/Spring (monólito modular)
 │   ├── identity/               # usuários, perfis, avatares
 │   ├── community/              # grupos e membros

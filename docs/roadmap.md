@@ -12,7 +12,7 @@ Regras do roadmap:
 
 Meta: esqueleto monorepo rodando local com CI.
 
-- [x] `git init`, GitHub repo público ([builders-community](https://github.com/Luanderson-Dev/builders-community)), proteção da `main`
+- [x] `git init`, GitHub repo público ([togetherdev-space](https://github.com/Luanderson-Dev/builders-community)), proteção da `main`
 - [x] Licença MIT + guia de contribuição
 - [ ] Estrutura monorepo (ADR 0006): `backend/`, `frontend/`, `docs/`, `deploy/`
 - [x] Backend: Spring Boot 4.x + Java 25 via start.spring.io (Maven), Actuator, Flyway, JPA, Spotless
@@ -42,7 +42,7 @@ Meta: hello-world de API e frontend acessíveis por HTTPS na VPS.
 
 Meta: cadastro/login real e perfil público editável.
 
-- [ ] Realm `builders` no Keycloak (clients `web`/`api`, roles plataforma, SMTP)
+- [ ] Realm `togetherdev` no Keycloak (clients `web`/`api`, roles plataforma, SMTP)
 - [ ] Auth.js no Next: login/logout/sessão cookie httpOnly ([security.md](architecture/security.md))
 - [ ] Backend resource server validando JWT (issuer + audience)
 - [ ] Migração V1: `users`, `profiles` ([data-model.md](architecture/data-model.md))

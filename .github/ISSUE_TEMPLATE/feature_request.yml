@@ -1,0 +1,50 @@
+name: 💡 Sugerir funcionalidade
+description: Ideia nova ou melhoria em algo existente
+labels: ["enhancement", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: Antes de abrir, procure por issues similares — pode já existir discussão em andamento.
+
+  - type: textarea
+    id: problema
+    attributes:
+      label: Problema ou necessidade
+      description: Qual dor isso resolve? Quem se beneficia?
+    validations:
+      required: true
+
+  - type: textarea
+    id: solucao
+    attributes:
+      label: Solução proposta
+      description: Como você imagina funcionando?
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Área
+      options:
+        - Frontend (web)
+        - Backend (api)
+        - Infraestrutura / deploy
+        - Documentação
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: escopo
+    attributes:
+      label: Escopo MVP?
+      description: Está dentro do roadmap atual ([docs/roadmap.md](https://github.com/Luanderson-Dev/togetherdev-space/blob/main/docs/roadmap.md))?
+      options:
+        - label: Está no roadmap atual
+        - label: É ideia para fases futuras
+        - label: Sugestão fora do escopo planejado (discutir)
+
+  - type: textarea
+    id: alternativas
+    attributes:
+      label: Alternativas consideradas

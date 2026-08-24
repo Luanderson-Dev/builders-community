@@ -1,5 +1,5 @@
 {
-  "realm": "builders",
+  "realm": "togetherdev",
   "enabled": true,
   "registrationAllowed": true,
   "loginWithEmailAllowed": true,
@@ -8,7 +8,7 @@
   "smtpServer": {
     "host": "mailpit",
     "port": "1025",
-    "from": "no-reply@builders.local",
+    "from": "no-reply@togetherdev.local",
     "auth": false,
     "ssl": false,
     "starttls": false

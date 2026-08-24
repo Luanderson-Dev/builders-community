@@ -19,7 +19,7 @@ Monólito modular (ADR 0002): cada domínio = pacote Java de primeiro nível com
 ## Estrutura interna padrão de módulo
 
 ```
-br.com.builderscommunity.<modulo>/
+com.togetherdev.space.<modulo>/
 ├── api/          # interfaces públicas p/ OUTROS módulos + eventos publicados
 ├── application/  # casos de uso (services), portas
 ├── domain/       # entidades, value objects, regras

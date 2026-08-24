@@ -40,7 +40,7 @@ Máximo `size=50`. Cursor-based documentado como upgrade quando feed ganhar foll
 Query params convencionais:
 
 ```
-GET /projects?status=active&sort=-createdAt,name&groupSlug=web-builders
+GET /projects?status=active&sort=-createdAt,name&groupSlug=togetherdev
 ```
 
 `sort` = lista de campos, prefixo `-` decrescente. Campos permitidos whitelistados por endpoint (nunca sort direto de input).
@@ -53,7 +53,7 @@ GET /projects?status=active&sort=-createdAt,name&groupSlug=web-builders
   "title": "Você não é membro deste grupo",
   "status": 403,
   "detail": "Ação exige papel admin ou superior.",
-  "instance": "/api/v1/groups/web-builders/members",
+  "instance": "/api/v1/groups/togetherdev/members",
   "code": "GROUP_NOT_MEMBER"
 }
 ```
@@ -80,7 +80,7 @@ GET /projects?status=active&sort=-createdAt,name&groupSlug=web-builders
 
 ## Autenticação nas chamadas
 
-Backend espera `Authorization: Bearer <jwt>` emitido pelo Keycloak (realm `builders`, audience `api`). O BFF Next injeta o header — ver [security.md](security.md). Endpoints públicos marcados explicitamente; default é negar.
+Backend espera `Authorization: Bearer <jwt>` emitido pelo Keycloak (realm `togetherdev`, audience `api`). O BFF Next injeta o header — ver [security.md](security.md). Endpoints públicos marcados explicitamente; default é negar.
 
 ## Rate limiting
 

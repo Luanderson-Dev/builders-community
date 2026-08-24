@@ -14,7 +14,7 @@ Alternativa considerada: repos separados — isolamento maior, porém overhead d
 **Monorepo** com estrutura:
 
 ```
-builders-community/
+togetherdev-space/
 ├── backend/          # Spring Boot (Maven)
 ├── frontend/         # Next.js (pnpm)
 ├── docs/             # este conjunto de documentação

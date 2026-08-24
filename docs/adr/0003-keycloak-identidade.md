@@ -17,7 +17,7 @@ Alternativas consideradas:
 **Keycloak** self-hosted (via Coolify) como Identity Provider:
 
 - Protocolo **OAuth2/OIDC**, fluxo **Authorization Code + PKCE**.
-- Realm dedicado `builders`; clients: `web` (público, PKCE) consumido pelo BFF Next.js (Auth.js provider Keycloak); backend é **resource server** validando access tokens JWT.
+- Realm dedicado `togetherdev`; clients: `web` (público, PKCE) consumido pelo BFF Next.js (Auth.js provider Keycloak); backend é **resource server** validando access tokens JWT.
 - Papéis de plataforma (`platform_admin`, `user`) como realm roles; papéis contextuais (owner/admin/member de grupo/projeto) ficam no Postgres, não no token — evitam token inflado e renegociação a cada mudança de papel.
 - E-mail transacional: SMTP configurado no Keycloak (fase 1 usa Brevo/Mailgun free tier ou SMTP da VPS).
 - Tema de login customizado (fase 4, pós-lançamento).

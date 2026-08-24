@@ -1,19 +1,19 @@
-name: builders-community-local
+name: togetherdev-space-local
 
 services:
   postgres:
     image: postgres:16-alpine
     container_name: bc-postgres
     environment:
-      POSTGRES_DB: builders
-      POSTGRES_USER: builders
-      POSTGRES_PASSWORD: builders
+      POSTGRES_DB: togetherdev
+      POSTGRES_USER: togetherdev
+      POSTGRES_PASSWORD: togetherdev
     ports:
       - "5432:5432"
     volumes:
       - ./data/postgres:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U builders -d builders"]
+      test: ["CMD-SHELL", "pg_isready -U togetherdev -d togetherdev"]
       interval: 10s
       timeout: 5s
       retries: 5
@@ -36,8 +36,8 @@ services:
     container_name: bc-minio
     command: server /data --console-address ":9001"
     environment:
-      MINIO_ROOT_USER: builders
-      MINIO_ROOT_PASSWORD: builders123
+      MINIO_ROOT_USER: togetherdev
+      MINIO_ROOT_PASSWORD: togetherdev123
     ports:
       - "9000:9000"
       - "9001:9001"
@@ -60,7 +60,7 @@ services:
     ports:
       - "8081:8081"
     volumes:
-      - ./keycloak/realm-builders.json:/opt/keycloak/data/import/realm-builders.json:ro
+      - ./keycloak/realm-togetherdev.json:/opt/keycloak/data/import/realm-togetherdev.json:ro
     depends_on:
       postgres:
         condition: service_healthy
