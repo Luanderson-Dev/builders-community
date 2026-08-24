@@ -42,8 +42,14 @@
       }
     }
   ],
-  "realmRoles": [
-    { "name": "user" },
-    { "name": "platform_admin" }
-  ]
+  "roles": {
+    "realm": [
+      {
+        "name": "user"
+      },
+      {
+        "name": "platform_admin"
+      }
+    ]
+  }
 }

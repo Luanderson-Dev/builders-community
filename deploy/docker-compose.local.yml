@@ -9,9 +9,9 @@ services:
       POSTGRES_USER: togetherdev
       POSTGRES_PASSWORD: togetherdev
     ports:
-      - "5432:5432"
+      - "${PG_PORT:-5432}:5432"
     volumes:
-      - ./data/postgres:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U togetherdev -d togetherdev"]
       interval: 10s
@@ -24,7 +24,7 @@ services:
     ports:
       - "6379:6379"
     volumes:
-      - ./data/redis:/data
+      - redisdata:/data
     healthcheck:
       test: ["CMD", "redis-cli", "ping"]
       interval: 10s
@@ -42,7 +42,7 @@ services:
       - "9000:9000"
       - "9001:9001"
     volumes:
-      - ./data/minio:/data
+      - miniodata:/data
     healthcheck:
       test: ["CMD", "mc", "ready", "local"]
       interval: 15s
@@ -71,3 +71,8 @@ services:
     ports:
       - "8025:8025"
       - "1025:1025"
+
+volumes:
+  pgdata:
+  redisdata:
+  miniodata:

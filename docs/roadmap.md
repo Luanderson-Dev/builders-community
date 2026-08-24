@@ -14,7 +14,7 @@ Meta: esqueleto monorepo rodando local com CI.
 
 - [x] `git init`, GitHub repo público ([togetherdev-space](https://github.com/Luanderson-Dev/togetherdev-space)), proteção da `main`
 - [x] Licença MIT + guia de contribuição
-- [ ] Estrutura monorepo (ADR 0006): `backend/`, `frontend/`, `docs/`, `deploy/`
+- [x] Estrutura monorepo (ADR 0006): `backend/`, `frontend/`, `docs/`, `deploy/`
 - [x] Backend: Spring Boot 4.x + Java 25 via start.spring.io (Maven), Actuator, Flyway, JPA, Spotless
 - [x] Frontend: Next.js App Router + TS + Tailwind v4 + shadcn/ui + pnpm
 - [x] `deploy/docker-compose.local.yml`: postgres, redis, minio, keycloak, mailpit
@@ -36,9 +36,11 @@ Meta: hello-world de API e frontend acessíveis por HTTPS na VPS.
 - [x] Deploy API Spring (`Dockerfile` multi-stage) → `api.dominio.com/actuator/health` 200
 - [x] Deploy Next → `app.dominio.com` renderiza página inicial
 - [x] DNS + domínio configurados; uptime monitor externo ativo
-- [ ] Backup diário Postgres agendado + destino remoto configurado
+- [x] Backup diário Postgres agendado + destino remoto configurado
 
-**Done quando:** dois hellos públicos em HTTPS, deploy = push na main, backup rodando.
+**Done quando:** dois hellos públicos em HTTPS, deploy = push na main, backup rodando. ✅ Concluída em 2026-08-24.
+
+> Backup: agendamento diário 04:00 UTC no Coolify (`pg_dump` custom format), executado e validado com sucesso (dump de 212 KB em `/data/coolify/backups/`). Destino externo S3 fica como evolução (hoje o destino é o disco da própria VPS).
 
 > ✅ Executado em 2026-08-24 via API do Coolify: `togetherdevspace.com`, `api.`, `auth.`, `s3.` no ar (Cloudflare proxy → Traefik). Realm `togetherdev` importado (clients `web`/`api`, roles `user`/`platform_admin`, OIDC PKCE S256). Pendências menores: backup diário (item acima), SMTP real e brute-force protection via UI admin (fase 2 cobre). Pegadinhas da execução registradas em [`provisioning-vps.md` §5.1](architecture/provisioning-vps.md).
 
