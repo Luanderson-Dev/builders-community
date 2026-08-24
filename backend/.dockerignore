@@ -1,7 +1,0 @@
-target/
-.git/
-.idea/
-*.iml
-.mvn/wrapper/*.lastUpdated
-Dockerfile
-.dockerignore

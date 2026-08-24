@@ -1,0 +1,13 @@
+.git/
+.idea/
+.vscode/
+**/node_modules/
+**/.next/
+**/out/
+**/target/
+frontend/.env*
+!frontend/.env.example
+deploy/data/
+*.log
+*.md
+!README.md

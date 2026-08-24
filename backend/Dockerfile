@@ -1,11 +1,13 @@
+# Contexto de build: RAIZ do repositório
+# Local:  docker build -f backend/Dockerfile .
 # ---- build ----
 FROM eclipse-temurin:25-jdk AS build
 WORKDIR /app
-COPY mvnw ./
-COPY .mvn .mvn
-COPY pom.xml ./
+COPY backend/mvnw ./
+COPY backend/.mvn .mvn
+COPY backend/pom.xml ./
 RUN ./mvnw -q -B dependency:go-offline
-COPY src ./src
+COPY backend/src ./src
 RUN ./mvnw -q -B package -DskipTests
 
 # ---- runtime ----

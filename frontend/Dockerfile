@@ -1,8 +1,10 @@
+# Contexto de build: RAIZ do repositório
+# Local:  docker build -f frontend/Dockerfile .
 # ---- deps ----
 FROM node:22-alpine AS deps
 WORKDIR /app
 RUN corepack enable
-COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
+COPY frontend/package.json frontend/pnpm-lock.yaml frontend/pnpm-workspace.yaml ./
 RUN pnpm install --frozen-lockfile
 
 # ---- build ----
@@ -13,7 +15,7 @@ ARG NEXT_PUBLIC_API_URL=http://localhost:8080/api/v1
 ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL \
     NEXT_TELEMETRY_DISABLED=1
 COPY --from=deps /app/node_modules ./node_modules
-COPY . .
+COPY frontend/ .
 RUN pnpm build
 
 # ---- runtime ----
