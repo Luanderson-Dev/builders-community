@@ -101,6 +101,10 @@ Provisionamento executado via API REST em 2026-08-24 — pegadinhas confirmadas:
 - Imagens prontas (minio/keycloak) como apps "Dockerfile raw": o `dockerfile` só pode ser definido **na criação** (`POST /applications/dockerfile`); depois, PATCH não permite alterá-lo — recriar o recurso se precisar mudar.
 - Postgres/Redis: hostname interno na rede Coolify = UUID do recurso (ex.: `rzlv...:5432`).
 - Ordem importa: subir bancos primeiro, esperar `running:healthy`, depois apps que dependem deles.
+- **`ports_exposes` via API não regenera os `custom_labels`** do Traefik — o container sobe com o `loadbalancer.server.port` antigo e o domínio responde 502. Via API, corrigir `custom_labels` (base64) junto com a porta. Pela UI isso é automático.
+- Keycloak 26: health fica na management port **9000** (`/health`), não no 8080 — teste de vida use `/realms/{realm}` ou configure healthcheck na 9000.
+- Realm importado uma vez fica no Postgres; boots seguintes logam "already exists. Import skipped" (estratégia IGNORE_EXISTING) — mudanças de realm depois só via admin console/API.
+- Import falho por JSON ruim = crash-loop silencioso (a API não expõe logs de container parado); os logs vivos aparecem assim que o container reinicia.
 
 ## 6. Deploy da API
 

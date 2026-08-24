@@ -30,15 +30,17 @@ Meta: hello-world de API e frontend acessíveis por HTTPS na VPS.
 
 > Execução passo a passo em [`docs/architecture/provisioning-vps.md`](architecture/provisioning-vps.md). Dockerfiles já prontos e validados localmente (`backend/Dockerfile`, `frontend/Dockerfile`).
 
-- [ ] Provisionar VPS (4 GB), hardening SSH/firewall/fail2ban ([environments.md](architecture/environments.md))
-- [ ] Instalar Coolify; Traefik + Let's Encrypt funcionando
-- [ ] Subir postgres, redis, minio, keycloak como apps Coolify
-- [ ] Deploy API Spring (`Dockerfile` multi-stage) → `api.dominio.com/actuator/health` 200
-- [ ] Deploy Next → `app.dominio.com` renderiza página inicial
-- [ ] DNS + domínio configurados; uptime monitor externo ativo
+- [x] Provisionar VPS (4 GB), hardening SSH/firewall/fail2ban ([environments.md](architecture/environments.md))
+- [x] Instalar Coolify; Traefik + Let's Encrypt funcionando
+- [x] Subir postgres, redis, minio, keycloak como apps Coolify
+- [x] Deploy API Spring (`Dockerfile` multi-stage) → `api.dominio.com/actuator/health` 200
+- [x] Deploy Next → `app.dominio.com` renderiza página inicial
+- [x] DNS + domínio configurados; uptime monitor externo ativo
 - [ ] Backup diário Postgres agendado + destino remoto configurado
 
 **Done quando:** dois hellos públicos em HTTPS, deploy = push na main, backup rodando.
+
+> ✅ Executado em 2026-08-24 via API do Coolify: `togetherdevspace.com`, `api.`, `auth.`, `s3.` no ar (Cloudflare proxy → Traefik). Realm `togetherdev` importado (clients `web`/`api`, roles `user`/`platform_admin`, OIDC PKCE S256). Pendências menores: backup diário (item acima), SMTP real e brute-force protection via UI admin (fase 2 cobre). Pegadinhas da execução registradas em [`provisioning-vps.md` §5.1](architecture/provisioning-vps.md).
 
 ## Fase 2 — Identity e perfil (Semanas 3–4)
 
