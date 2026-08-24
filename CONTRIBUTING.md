@@ -16,6 +16,10 @@ Projeto open source em construção ativa — contribuições de qualquer tamanh
 8. [Migrações de banco](#-migrações-de-banco)
 9. [Reportando vulnerabilidades](#-reportando-vulnerabilidades)
 
+> 💡 Dúvidas sobre como usar o projeto ou ideias em estágio inicial? Use as [Discussions](https://github.com/Luanderson-Dev/togetherdev-space/discussions). Issues ficam para bugs e features bem definidas.
+
+Ao participar deste projeto (issues, PRs, Discussions, code review) você concorda com o [Código de Conduta](CODE_OF_CONDUCT.md). Seja respeitoso — comunidade saudável vem antes de código.
+
 ## 🤝 Formas de contribuir
 
 | Forma | Como |

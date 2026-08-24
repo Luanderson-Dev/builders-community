@@ -1,0 +1,5 @@
+# Owners padrão do repositório.
+# Todas as áreas exigem review de @Luanderson-Dev até que o time cresça.
+# Ao criar módulos com maintainers próprios, adicione linhas específicas:
+#   backend/src/main/java/com/togetherdev/space/<modulo>/ @user1 @user2
+* @Luanderson-Dev
