@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: builders-community-api
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/builders}
+    username: ${SPRING_DATASOURCE_USERNAME:builders}
+    password: ${SPRING_DATASOURCE_PASSWORD:builders}
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+  flyway:
+    locations: classpath:db/migration
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      probes:
+        enabled: true
+
+server:
+  port: ${PORT:8080}

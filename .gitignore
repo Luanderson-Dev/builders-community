@@ -3,7 +3,7 @@ node_modules/
 .pnpm-store/
 
 # Builds
-backend/build/
+backend/target/
 frontend/.next/
 frontend/out/
 dist/
