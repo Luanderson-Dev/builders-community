@@ -16,13 +16,13 @@ Meta: esqueleto monorepo rodando local com CI.
 - [x] Licença MIT + guia de contribuição
 - [ ] Estrutura monorepo (ADR 0006): `backend/`, `frontend/`, `docs/`, `deploy/`
 - [x] Backend: Spring Boot 4.x + Java 25 via start.spring.io (Maven), Actuator, Flyway, JPA, Spotless
-- [ ] Frontend: Next.js App Router + TS + Tailwind + shadcn/ui + pnpm
-- [ ] `deploy/docker-compose.local.yml`: postgres, redis, minio, keycloak, mailpit
-- [ ] CI GitHub Actions paths-filtered: build + testes + lint dos dois lados
-- [ ] Formatação: Spotless (Java), Prettier+ESLint (TS); Conventional Commits verificado no CI
+- [x] Frontend: Next.js App Router + TS + Tailwind v4 + shadcn/ui + pnpm
+- [x] `deploy/docker-compose.local.yml`: postgres, redis, minio, keycloak, mailpit
+- [x] CI GitHub Actions paths-filtered: build + testes + lint dos dois lados
+- [x] Formatação: Spotless (Java), Prettier+ESLint (TS); Conventional Commits verificado no CI
 - [x] Visão consolidada no `README.md` raiz; README apontando pra docs
 
-**Done quando:** CI verde em PR de exemplo tocando backend e frontend; compose sobe tudo local.
+**Done quando:** CI verde em PR de exemplo tocando backend e frontend; compose sobe tudo local. ✅ [PR #1](https://github.com/Luanderson-Dev/builders-community/pull/1)
 
 ## Fase 1 — Infra base no ar (Semana 2)
 
